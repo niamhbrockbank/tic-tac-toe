@@ -6,14 +6,14 @@ export default function Player({ initialName, symbol, isActive, onSaveName }) {
 
   function handleEditClick() {
     setIsEditing((editing) => !editing);
-  }
-
-  function handleChangeName(event) {
-    setPlayerName(event.target.value);
 
     if (isEditing) {
       onSaveName(symbol, playerName);
     }
+  }
+
+  function handleChangeName(event) {
+    setPlayerName(event.target.value);
   }
 
   let editablePlayerName = <span className="player-name">{playerName}</span>;
